@@ -1,7 +1,16 @@
+import React, { Fragment } from 'react'
+import { Header, Form } from './components'
 
 function App() {
   return (
-    <h1>React Drink Finder</h1>
+    <Fragment>
+      <Header />
+      <div className='container mt-5'>
+        <div className='row'>
+          <Form />
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
