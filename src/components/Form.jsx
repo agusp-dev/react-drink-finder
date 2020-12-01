@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { CategoriesCtx } from '../context'
+import { CategoriesCtx, DrinksCtx } from '../context'
 
 const Form = () => {
 
   const { categories } = useContext(CategoriesCtx)
+  const { drinks, searchDrinks } = useContext(DrinksCtx)
 
   const [searchData, setSearchData] = useState({
     ingredient: '',
@@ -20,8 +21,16 @@ const Form = () => {
   const setCategoriesSelect = () => 
     categories.map( c => <option key={ c } value={ c }>{ c }</option> )
 
+  const onHandleSubmit = e => {
+    e.preventDefault()
+    const { ingredient, category } = searchData
+    searchDrinks(ingredient, category)
+  }
+
   return (
-    <form className='col-12'>
+    <form 
+      className='col-12'
+      onSubmit={ onHandleSubmit }>
       <fieldset className='text-center'>
         <legend>Search drinks by category or ingredients</legend>
       </fieldset>

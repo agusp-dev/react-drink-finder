@@ -2,7 +2,7 @@ import React, { createContext, useState,  useEffect } from 'react'
 import { cocktailsApi } from '../api'
 
 //context creation
-export const CategoriesCtx = createContext() 
+const CategoriesCtx = createContext() 
 
 //Provider that contains functions and state
 const CategoriesContext = props => {
@@ -34,4 +34,4 @@ const CategoriesContext = props => {
   )
 }
 
-export { CategoriesContext }
+export { CategoriesContext, CategoriesCtx }

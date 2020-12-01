@@ -1,16 +1,19 @@
-import React, { Fragment } from 'react'
-import { Header, Form } from './components'
-import { CategoriesContext } from  './context'
+import React from 'react'
+import { Header, Form, DrinkList } from './components'
+import { CategoriesContext, DrinksContext } from  './context'
 
 function App() {
   return (
     <CategoriesContext>
-      <Header />
-      <div className='container mt-5'>
-        <div className='row'>
-          <Form />
+      <DrinksContext>
+        <Header />
+        <div className='container mt-5'>
+          <div className='row'>
+            <Form />
+          </div>
+          <DrinkList />
         </div>
-      </div>
+      </DrinksContext>
     </CategoriesContext>
   );
 }
