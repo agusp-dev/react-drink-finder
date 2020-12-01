@@ -6,6 +6,7 @@ const URL = 'https://www.thecocktaildb.com/api/json/v1/1'
  * https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list
  * https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
    https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail
+   https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
  */
 
  const getCategories = async () => {
@@ -37,7 +38,14 @@ const URL = 'https://www.thecocktaildb.com/api/json/v1/1'
   return result
  }
 
+ const getDrinkDetail = async id => {
+  const url = `${ URL }/lookup.php?i=${id}`
+  const result = await axios.get(url)
+  return result
+ }
+
  export const cocktailsApi = {
   getCategories,
-  getDrinks
+  getDrinks,
+  getDrinkDetail
  }

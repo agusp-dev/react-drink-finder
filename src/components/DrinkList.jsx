@@ -11,7 +11,8 @@ const DrinkList = () => {
       {drinks && (
         drinks.map(d => 
           <Drink 
-            key={ d.idDrink } 
+            key={ d.idDrink }
+            idDrink={ d.idDrink } 
             strDrink={ d.strDrink }
             strDrinkThumb={ d.strDrinkThumb }/>)
       )}
